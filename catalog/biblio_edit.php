@@ -99,7 +99,7 @@ function postVarsToBiblio($post) {
 }
 function biblioToPageErrors($biblio) {
   $pageErrors = array();
-  $pageErrors["callNmbr1"] = $biblio->getCallNmbrError();
+ // $pageErrors["callNmbr1"] = $biblio->getCallNmbrError();
   $biblioFlds = $biblio->getBiblioFields();
   foreach($biblio->getBiblioFields() as $index => $field) {
     if ($field->getFieldDataError() != "") {

@@ -82,9 +82,9 @@
  	  }
  	   	  
  	  /*column 4 is for Category , column 5 is for Type*/
-	  foreach ($collections as $code=>$collection)
+	  foreach ($collectionDesc as $code=>$collection)
 	  {
-	  	if(strcmp($columns[4]." ".$columns[5], $collection))
+	  	if(strcmp($columns[4]." ".$columns[5], $collection)==0)
 	  	{
 	  		$columns[4]=$code;
 	  	}
@@ -96,14 +96,14 @@
 	  /*column 6 is for Medium(book,video/dvd,magazine)*/
 	  	foreach ($materials as $code=>$collection)
 	  	{
-	  		if(strcmp($columns[6], $collection))
+	  		if(strcmp($columns[6], $collection)==0)
 	  		{
 	  			$columns[6]=$code;
 	  		}
 	  	}
 	  
 	  if (strlen(trim($columns[6]))==0) {
-	  	$columns[6] = '1';
+	  	$columns[6] = '2';
 	  }
 	   
 	  /*column 7 is for comments*/
