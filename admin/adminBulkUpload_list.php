@@ -8,7 +8,7 @@
  *
  *                  CHANGE HISTORY
  *     #C3 - Its a feature for bulkupload of titles and copies of an items in admin section 
- *     @author Kiran Kumar Reddy and Saiteja Bogade
+ *     @author Karthikeya, Kiran Kumar Reddy and Saiteja Bogade
  *
  ******************************************************************************
  */
@@ -81,39 +81,43 @@
 	  		$columns[3] = "in";
  	  }
  	   	  
- 	  /*column 4 is for Category , column 5 is for Type*/
+ 	  /*column 4 is for Type*/
 	  foreach ($collectionDesc as $code=>$collection)
 	  {
-	  	if(strcmp($columns[4]." ".$columns[5], $collection)==0)
+	  	if(strcmp($columns[4], $collection)==0)
 	  	{
 	  		$columns[4]=$code;
 	  	}
+		else
+			$columns[4]='1';
 	  }
 	  if (strlen(trim($columns[4]))==0) {
 	  	$columns[4] = '1';
 	  }
 	  	
-	  /*column 6 is for Medium(book,video/dvd,magazine)*/
+	  /*column 5 is for Medium(book,video/dvd,magazine)*/
 	  	foreach ($materials as $code=>$collection)
 	  	{
-	  		if(strcmp($columns[6], $collection)==0)
+	  		if(strcmp($columns[5], $collection)==0)
 	  		{
-	  			$columns[6]=$code;
+	  			$columns[5]=$code;
 	  		}
+			else
+				$columns[5]='2';
 	  	}
 	  
-	  if (strlen(trim($columns[6]))==0) {
-	  	$columns[6] = '2';
+	  if (strlen(trim($columns[5]))==0) {
+	  	$columns[5] = '2';
 	  }
 	   
-	  /*column 7 is for comments*/
-	  if (strlen(trim($columns[7]))==0) {
-	  	$columns[7] = ' ';
+	  /*column 6 is for comments*/
+	  if (strlen(trim($columns[6]))==0) {
+	  	$columns[6] = ' ';
 	  }
 	  
-	  /*column 8 is for location id*/
-	  if (strlen ( (trim($columns[8]))==0)|| (!is_numeric($columns[8]))) {
-	  	$columns[8] = null;
+	  /*column 7 is for location id*/
+	  if (strlen ( (trim($columns[7]))==0)|| (!is_numeric($columns[7]))) {
+	  	$columns[7] = null;
 	  }
 	   
 	   

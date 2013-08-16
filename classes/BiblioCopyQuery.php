@@ -28,7 +28,12 @@ class BiblioCopyQuery extends Query {
     return $this->_rowCount;
   }
 
-
+	function getBooksList($locid)
+	{
+		$sql = $this->mkSQL("SELECT a.title, b.barcode_nmbr, a.author FROM biblio a, biblio_copy b "
+			." WHERE a.bibid = b.bibid AND b.locationid = %N",$locid);
+		return $this->exec($sql);
+	}
   /****************************************************************************
    * Executes a query to select ONLY ONE COPY
    * @param string $bibid bibid of bibliography copy to select
@@ -207,6 +212,34 @@ class BiblioCopyQuery extends Query {
     return $nmbr+1;
   }
 
+  /****************************************************************************
+   * Returns the LocationId of the book with particular barcode number from BiblioCopy
+  * @access private
+  * Newely added function on 15-aug-2013	
+  ****************************************************************************
+  */
+function getLocationOfBook($barcode)
+{
+  	$sql = $this->mkSQL("SELECT locationid as location FROM biblio_copy where barcode_nmbr=%Q",$barcode);
+  	$result=$this->exec($sql);
+  	$locationid=$result[0]['location'];
+  	return $locationid;	
+}  
+  
+  /****************************************************************************
+   * Returns the next barcode number available in the biblio_copy barcode number field for a given biblio
+  * @access private
+  ****************************************************************************
+  */
+  function getBarcodeNumber() {
+  	$sql = $this->mkSQL("SELECT count(*) as barcode FROM biblio_copy ");
+  	$result=$this->exec($sql);
+  	$barcode=$result[0]['barcode'];
+  	if((isset($barcode)))
+  		return $barcode+1;
+  	return 1;
+  }
+  
   /****************************************************************************
    * Inserts a new bibliography copy into the biblio_copy table.
    * @param BiblioCopy $copy bibliography copy to insert

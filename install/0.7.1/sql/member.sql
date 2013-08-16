@@ -13,5 +13,5 @@ create table %prfx%member (
   ,email varchar(128) null
   ,classification smallint not null
   )
-  ENGINE=MyISAM
+  ENGINE=InnoDB
 ;

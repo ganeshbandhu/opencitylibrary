@@ -7,7 +7,7 @@ create table %prfx%member_account (
   ,transaction_type_cd char(2) not null
   ,amount decimal(8,2) not null
   ,description varchar(128) null
-  ,primary key(mbrid,transid)
+  ,primary key(transid)
   )
-  ENGINE=MyISAM
+  ENGINE=InnoDB
 ;

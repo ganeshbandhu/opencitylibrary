@@ -50,8 +50,8 @@ $trans["indexHeading"]            = "\$text='Circulation';";
 $trans["indexCardHdr"]            = "\$text='Search Member by Card Number:';";
 $trans["indexCard"]               = "\$text='Card Number:';";
 $trans["indexSearch"]             = "\$text='Search';";
-$trans["indexNameHdr"]            = "\$text='Search Member by Last Name:';";
-$trans["indexName"]               = "\$text='Last name start with:';";
+$trans["indexNameHdr"]            = "\$text='Search Member by First Name:';";
+$trans["indexName"]               = "\$text='First name start with:';";
 
 #****************************************************************************
 #*  Translation text for page mbr_new_form.php, mbr_edit_form.php and mbr_fields.php
@@ -277,6 +277,9 @@ $trans["locEditForm"]             = "\$text='Edit';";
 $trans["locFldsHeader"]           = "\$text='Location:';";
 $trans["locFldsAddr2"]            = "\$text='Address:';";
 $trans["locFldsAddr1"]            = "\$text='Location (Panjagutta, Uppal, ..etc):';";
+$trans["locFldsDays"]             = "\$text='Library Days:';";
+$trans["locFldsTime"]             = "\$text='Library Timings:';";
+
 $trans["locFldsCity"]             = "\$text='City:';";
 $trans["locFldsState"]         	  = "\$text='State:';";
 $trans["locFldsPincode"]          = "\$text='Pincode:';";
@@ -294,7 +297,7 @@ $trans["locindexSearch"]          = "\$text='Search location by place';";
 $trans["locindexplace"]           = "\$text='Address:';";
 $trans["locsearchCity"]        	  = "\$text='City:';";
 $trans["locsearchState"]          = "\$text='State:';";
-$trans["locstaffid"]          	  = "\$text='StaffId:';";
+$trans["locstaffid"]          	  = "\$text='Staff Name:';";
 $trans["locsearchPincode"]        = "\$text='Pincode:';";
 $trans["locFldsLatitude"]         = "\$text='Latitude:';";
 $trans["locFldsLongitude"]        = "\$text='Longitude:';";
@@ -319,6 +322,8 @@ $trans["locViewAddrTwo"]          = "\$text='Address:';";
 $trans["locViewCity"]             = "\$text='City:';";
 $trans["locViewState"]         	  = "\$text='State:';";
 $trans["locViewPincode"]          = "\$text='Pincode:';";
+$trans["locViewDays"]          	  = "\$text='LibraryDays:';";
+$trans["locViewTime"]             = "\$text='Library Timings:';";
 $trans["locViewDel"]              = "\$text='del';";
 $trans["locStaff"]                = "\$text='Staff:;";
 $trans["locViewLatitude"]         = "\$text='Latitude:';";
@@ -335,7 +340,7 @@ $trans["locDelConfirmWarn"]       = "\$text = 'Location, %name%, has books assoc
 #****************************************************************************
 #*  Translation text for page loc_del.php
 #****************************************************************************
-$trans["locDelSuccess"]           = "\$text='Location, %name%, has been deleted.';";
+$trans["locDelSuccess"]           = "\$text='Location, %name% , has been deleted.';";
 $trans["locDelReturn"]            = "\$text='return to Location Search';";
 
 

@@ -47,6 +47,10 @@
   $_POST["state"] = $location->getState();
   $location->setPincode($_POST["pincode"]);
   $_POST["pincode"] = $location->getPincode();
+  $location->setDays($_POST["days"]);
+  $_POST["days"] = $location->getDays();
+  $location->setTime($_POST["time"]);
+  $_POST["time"] = $location->getTime();
   $location->setLatitude($_POST["latitude"]);
   $_POST["latitude"] = $location->getLatitude();
   $location->setLongitude($_POST["longitude"]);

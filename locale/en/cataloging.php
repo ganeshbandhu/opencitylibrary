@@ -44,6 +44,7 @@ $trans["catalogDelete"]            = "\$text = 'Delete';";
 $trans["catalogFootnote"]          = "\$text = 'Fields marked with %symbol% are required.';";
 $trans["AnswerYes"]                = "\$text = 'Yes';";
 $trans["AnswerNo"]                 = "\$text = 'No';";
+$trans["locDelete"]            	   = "\$text = 'Delete';";
 
 #****************************************************************************
 #*  Translation text for page index.php

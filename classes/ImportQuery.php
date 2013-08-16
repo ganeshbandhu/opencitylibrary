@@ -6,6 +6,7 @@
 require_once("../shared/global_constants.php");
 require_once("../classes/Query.php");
 require_once("../classes/Localize.php");
+require_once("../classes/BiblioCopyQuery.php");
 
 /******************************************************************************
  * Import data access component for library bibliographies
@@ -25,12 +26,19 @@ function import()	{
 function insertBiblio($data) {
  
  	$sql  = "INSERT INTO biblio(create_dt, last_change_dt, last_change_userid, collection_cd, material_cd, title, author) ";
-	$sql .= " VALUES ('" . date("Y-m-d H:i:s") . "','" . date("Y-m-d H:i:s")  . "','" . 995 .  "','"  . $data[4] .  "','" .  $data[6] .  "','" . $data[1] .  "','" . $data[2] . "')";
+	$sql .= " VALUES ('" . date("Y-m-d H:i:s") . "','" . date("Y-m-d H:i:s")  . "','" . 995 .  "','"  . $data[4] .  "','" .  $data[5] .  "','" . $data[1] .  "','" . $data[2] . "')";
    	$qShowStatusResult = $this->_act($sql);
 	if ($qShowStatusResult==true)
-  		return $this->getInsertID();
-	else
-		return 0;	
+	{
+		$insertid=$this->getInsertID();
+		$sql="INSERT INTO biblio_field(bibid,fieldid,tag,ind1_cd,ind2_cd,subfield_cd,field_data)";
+		$sql.=" VALUES ('".$insertid."','"."  ', '260', 'N', 'N', 'b', '".$data[8]."')";
+		$qShowStatusResult=$this->_act($sql);
+		if($qShowStatusResult==true)
+			return $insertid;
+		return 0;
+	}
+	return 0;
 }
 /**
  * Inserts data into the biblio table
@@ -63,10 +71,11 @@ function alreadyInDB($title) {
  * @return nothing
  */
 function insertBiblioCopy($data, $lastInsertID) {
-	
+	$bibQ=new BiblioCopyQuery();
+	$barcodenumber=$bibQ->getBarcodeNumber();
 	$sql  = "INSERT INTO biblio_copy (create_dt, bibid, barcode_nmbr, status_cd, status_begin_dt, copy_desc , locationid) VALUES ( ";
-	$sql .= "'" . date("Y-m-d H:i:s") . "','" . $lastInsertID .  "','" . $data[0] . "','" . $data[3] . "','" . date("Y-m-d H:i:s") . "','";
-	$sql .= $data[7]. "','".$data[8]."' ) " ;
+	$sql .= "'" . date("Y-m-d H:i:s") . "','" . $lastInsertID .  "','" . $barcodenumber . "','" . $data[3] . "','" . date("Y-m-d H:i:s") . "','";
+	$sql .= $data[6]. "','".$data[7]."' ) " ;
   	$r = $this->_act($sql);
  	return $r;
 }

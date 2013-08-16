@@ -22,6 +22,22 @@
  <a href="../admin/staff_list.php" class="alt1"><?php echo $navLoc->getText("adminStaff");?></a><br>
 <?php } ?>
 
+
+<?php if ($nav == "BooksForLocation") { ?>
+ &raquo; <?php echo $navLoc->getText("BooksForLocation");?><br>
+<?php } else { ?>
+ <a href="../admin/locationBooks.php" class="alt1"><?php echo $navLoc->getText("BooksForLocation");?></a><br>
+<?php } ?>
+
+
+<?php if ($nav == "MembersOfLocation") { ?>
+ &raquo; <?php echo $navLoc->getText("MembersOfLocation");?><br>
+<?php } else { ?>
+ <a href="../admin/locationMembers.php" class="alt1"><?php echo $navLoc->getText("MembersOfLocation");?></a><br>
+<?php } ?>
+
+
+
 <?php if ($nav == "settings") { ?>
  &raquo; <?php echo $navLoc->getText("adminSettings");?><br>
 <?php } else { ?>

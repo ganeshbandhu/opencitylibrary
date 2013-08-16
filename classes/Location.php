@@ -28,6 +28,8 @@ class Location {
 	var $_pincodeError = "";
 	var $_state = "";
 	var $_city = "";
+	var $_days= "";
+	var $_time= "";
 	var $_latitude="";
 	var $_longitude="";
 
@@ -107,6 +109,14 @@ class Location {
 	{
 		return $this->_longitude;
 	}
+	function getDays()
+	{
+		return $this->_days;
+	}
+	function getTime()
+	{
+		return $this->_time;
+	}
 
 
 	/****************************************************************************
@@ -161,7 +171,14 @@ class Location {
 	function setLongitude($value){
 		$this->_longitude = trim($value);
 	}
-
+	function setDays($value)
+	{
+		$this->_days=trim($value);
+	}
+	function setTime($value)
+	{
+		$this->_time=trim($value);
+	}
 }
 
 ?>

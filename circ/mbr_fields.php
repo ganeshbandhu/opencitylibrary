@@ -12,7 +12,6 @@
   $dmQ->close();
   $fields = array(
     "mbrFldsClassify" => inputField('select', 'classification', $mbr->getClassification(), NULL, $mbrClassifyDm),
-    "mbrFldsCardNmbr" => inputField('text', "barcodeNmbr", $mbr->getBarcodeNmbr()),
     "mbrFldsLastName" => inputField('text', "lastName", $mbr->getLastName()),
     "mbrFldsFirstName" => inputField('text', "firstName", $mbr->getFirstName()),
     "mbrFldsEmail" => inputField('text', "email", $mbr->getEmail()),

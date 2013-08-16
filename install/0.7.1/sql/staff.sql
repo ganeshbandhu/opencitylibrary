@@ -17,5 +17,5 @@ create table %prfx%staff (
   ,catalog_flg char(1) not null
   ,reports_flg char(1) not null
   )
-  ENGINE=MyISAM
+  ENGINE=InnoDB
 ;

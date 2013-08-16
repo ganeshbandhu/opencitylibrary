@@ -4,5 +4,5 @@ create table %prfx%biblio_status_dm (
   ,description varchar(40) not null
   ,default_flg char(1) not null
 )
-  ENGINE=MyISAM
+  ENGINE=InnoDB
 ;

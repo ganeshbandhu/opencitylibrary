@@ -6,4 +6,4 @@ create table %prfx%biblio_copy_fields (
   data text NOT NULL,
   PRIMARY KEY (bibid, copyid, code),
   INDEX code_index (code)
-) ENGINE=MyISAM;
+) ENGINE=InnoDB;

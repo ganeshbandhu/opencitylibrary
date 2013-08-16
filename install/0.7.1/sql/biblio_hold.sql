@@ -6,7 +6,7 @@ create table %prfx%biblio_hold (
   ,hold_begin_dt datetime not null
   ,mbrid integer not null
   ,index mbr_index (mbrid)
-  ,primary key(bibid,copyid,holdid)
+  ,primary key(holdid)
   )
-  ENGINE=MyISAM
+  ENGINE=InnoDB
 ;

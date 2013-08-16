@@ -9,5 +9,4 @@ create table %prfx%biblio_city (
    city_longitude decimal(10,6) null,
    primary key(cityid)
   )
-  ENGINE=MyISAM
-;
+  ENGINE=InnoDB;

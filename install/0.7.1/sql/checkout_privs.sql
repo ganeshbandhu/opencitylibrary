@@ -6,5 +6,5 @@ create table %prfx%checkout_privs (
   renewal_limit tinyint unsigned NOT NULL,
   PRIMARY KEY (material_cd, classification)
 )
-  ENGINE=MyISAM
+  ENGINE=InnoDB
 ;

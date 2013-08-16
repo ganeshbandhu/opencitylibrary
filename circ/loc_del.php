@@ -15,7 +15,7 @@
   $loc = new Localize(OBIB_LOCALE,$tab);
 
   $locationid = $_GET["locationid"];
-  $locationName = $_GET["loc_address_one"];
+  $locationName = $_GET["name"];
 
   #**************************************************************************
   #*  Delete location

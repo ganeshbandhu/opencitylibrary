@@ -8,7 +8,7 @@
 
   $tab = "circulation";
   $restrictToMbrAuth = TRUE;
-  $nav = "edit";
+  $nav = "locedit";
   $focus_form_name = "editLocform";
   require_once("../functions/inputFuncs.php");
   require_once("../shared/logincheck.php");

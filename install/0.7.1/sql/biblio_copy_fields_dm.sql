@@ -4,4 +4,4 @@ create table %prfx%biblio_copy_fields_dm (
   description char(32) NOT NULL,
   default_flg char(1) NOT NULL,
   PRIMARY KEY (code)
-) ENGINE=MyISAM;
+) ENGINE=InnoDB;

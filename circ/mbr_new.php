@@ -29,8 +29,8 @@
   #*  Validate data
   #****************************************************************************
   $mbr = new Member();
-  $mbr->setBarcodeNmbr($_POST["barcodeNmbr"]);
-  $_POST["barcodeNmbr"] = $mbr->getBarcodeNmbr();
+//  $mbr->setBarcodeNmbr($_POST["barcodeNmbr"]);
+//  $_POST["barcodeNmbr"] = $mbr->getBarcodeNmbr();
   $mbr->setLastChangeUserid($_SESSION["userid"]);
   $mbr->setLastName($_POST["lastName"]);
   $_POST["lastName"] = $mbr->getLastName();
@@ -58,7 +58,7 @@
   
   $validData = $mbr->validateData();
   if (!$validData) {
-    $pageErrors["barcodeNmbr"] = $mbr->getBarcodeNmbrError();
+//    $pageErrors["barcodeNmbr"] = $mbr->getBarcodeNmbrError();
     $pageErrors["lastName"] = $mbr->getLastNameError();
     $pageErrors["firstName"] = $mbr->getFirstNameError();
     $_SESSION["postVars"] = $_POST;
@@ -70,16 +70,16 @@
   #**************************************************************************
   #*  Check for duplicate barcode number
   #**************************************************************************
-  $mbrQ = new MemberQuery();
-  $mbrQ->connect();
-  $dupBarcode = $mbrQ->DupBarcode($mbr->getBarcodeNmbr(),$mbr->getMbrid());
-  if ($dupBarcode) {
-    $pageErrors["barcodeNmbr"] = $loc->getText("mbrDupBarcode",array("barcode"=>$mbr->getBarcodeNmbr()));
-    $_SESSION["postVars"] = $_POST;
-    $_SESSION["pageErrors"] = $pageErrors;
-    header("Location: ../circ/mbr_new_form.php");
-    exit();
-  }
+   $mbrQ = new MemberQuery();
+   $mbrQ->connect();
+//   $dupBarcode = $mbrQ->DupBarcode($mbr->getBarcodeNmbr(),$mbr->getMbrid());
+//   if ($dupBarcode) {
+//     $pageErrors["barcodeNmbr"] = $loc->getText("mbrDupBarcode",array("barcode"=>$mbr->getBarcodeNmbr()));
+//     $_SESSION["postVars"] = $_POST;
+//     $_SESSION["pageErrors"] = $pageErrors;
+//     header("Location: ../circ/mbr_new_form.php");
+//     exit();
+//   }
 
   #**************************************************************************
   #*  Insert new library member

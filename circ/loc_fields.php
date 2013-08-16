@@ -21,8 +21,11 @@
     "locFldsCity" => inputField('text', "city", $location->getCity()),  		
     "locFldsPincode" => inputField('text', "pincode", $location->getPincode()),
     "locFldsState" => inputField('text', "state", $location->getState()),
+  	"locFldsDays" => inputField('text', "days", $location->getDays()),
+  	"locFldsTime" => inputField('text', "time", $location->getTime()),
   	"locFldsLatitude" => inputField('text', "latitude", $location->getLatitude()),
   	"locFldsLongitude" => inputField('text', "longitude", $location->getLongitude()),
+  		
   		
   );
 

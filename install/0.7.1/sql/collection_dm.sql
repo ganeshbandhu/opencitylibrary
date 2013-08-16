@@ -6,5 +6,5 @@ create table %prfx%collection_dm (
   ,days_due_back smallint unsigned not null
   ,daily_late_fee decimal(4,2) not null
 )
-  ENGINE=MyISAM
+  ENGINE=InnoDB
 ;

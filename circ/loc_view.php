@@ -5,7 +5,7 @@
  
   require_once("../shared/common.php");
   $tab = "circulation";
-  $nav = "view";
+  $nav = "locview";
   $helpPage = "memberView";
 
   require_once("../functions/inputFuncs.php");
@@ -106,6 +106,24 @@
     </td>
     <td valign="top" class="primary">
       <?php echo H($lot->getPincode());?>
+    </td>
+  </tr>
+
+    <tr>
+    <td class="primary" valign="top">
+      <?php echo $loc->getText("locViewDays"); ?>
+    </td>
+    <td valign="top" class="primary">
+      <?php echo H($lot->getDays());?>
+    </td>
+  </tr>
+  
+    <tr>
+    <td class="primary" valign="top">
+      <?php echo $loc->getText("locViewTime"); ?>
+    </td>
+    <td valign="top" class="primary">
+      <?php echo H($lot->getTime());?>
     </td>
   </tr>
   

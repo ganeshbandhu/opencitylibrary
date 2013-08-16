@@ -12,6 +12,7 @@ require_once("../classes/BiblioHoldQuery.php");
 require_once("../classes/BiblioStatusHist.php");
 require_once("../classes/BiblioStatusHistQuery.php");
 require_once("../classes/MemberQuery.php");
+require_once("../classes/LocationQuery.php");
 require_once("../classes/MemberAccountTransaction.php");
 require_once("../classes/MemberAccountQuery.php");
 require_once("../classes/Date.php");
@@ -40,6 +41,23 @@ class CircQuery extends Query {
 		$this->unlock();
 		return $ret;
 	}
+	
+	// Newely added function on 15-aug-2013	
+	function validateCheckOut($staffid,$barcode)
+	{
+		$copyQ = new BiblioCopyQuery();
+		$locQ=new LocationQuery();
+		$locationOfBook=$copyQ->getLocationOfBook($barcode);		
+		$staff=$locQ->getStaffOfLocation($locationOfBook);
+		if($staff==$staffid)
+			return null;
+		return new Error($this->_loc->getText("This Copy does not belong to your Location to checkout"));
+	}
+	/**
+	* 
+	* Checks all kind of validations and returns the appropriate errors before checking out the book
+	* 
+	*/
 	function _checkout_e($mbcode, $bcode, $due, $date, $force) {
 		if ($date === NULL) {
 			list($date, $err) = Date::read_e('today');

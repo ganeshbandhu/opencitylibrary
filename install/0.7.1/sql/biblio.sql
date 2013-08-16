@@ -20,5 +20,5 @@ create table %prfx%biblio (
   ,topic5 text null
   ,opac_flg char(1) not null
   )
-  ENGINE=MyISAM
+  ENGINE=InnoDB
 ;

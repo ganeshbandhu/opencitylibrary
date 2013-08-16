@@ -8,4 +8,4 @@ create table %prfx%material_usmarc_xref (
   `required` char(1) NOT NULL default '',
   `cntrltype` char(1) NOT NULL default '',
   PRIMARY KEY  (`xref_id`)
-) ENGINE=MyISAM;
+) ENGINE=InnoDB;

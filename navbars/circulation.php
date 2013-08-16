@@ -78,12 +78,23 @@
 <?php } else { ?>
  <a href="../circ/loc_index.php?reset=Y" class="alt1"><?php echo $navloc->getText("locationSearch"); ?></a><br>
 <?php } ?>
-<?php if ($nav == "view") { ?>
+<?php if ($nav == "locview") { ?>
  &nbsp; &raquo; <?php echo $navloc->getText("locationInfo"); ?><br>
  &nbsp; &nbsp; <a href="../circ/loc_edit_form.php?locationid=<?php echo HURL($locationid);?>" class="alt1"><?php echo $navloc->getText("locationeditInfo"); ?></a><br>
  &nbsp; &nbsp; <a href="../circ/loc_del_confirm.php?locationid=<?php echo HURL($locationid);?>" class="alt1"><?php echo $navloc->getText("locationDelete"); ?></a><br>
 <?php } ?>
 
+<?php if ($nav == "locedit") { ?>
+ &nbsp; &nbsp; <a href="../circ/loc_view.php?locationid=<?php echo HURL($locationid);?>" class="alt1"><?php echo $navloc->getText("locationInfo"); ?></a><br>
+ &nbsp; &nbsp; &raquo; <?php echo $navloc->getText("editInfo"); ?><br>
+ &nbsp; &nbsp; <a href="../circ/loc_del_confirm.php?locationid=<?php echo HURL($locationid);?>" class="alt1"><?php echo $navloc->getText("locationDelete"); ?></a><br>
+<?php } ?>
+
+<?php if ($nav == "locdelete") { ?>
+ &nbsp; &nbsp; <a href="../circ/loc_view.php?locationid=<?php echo HURL($locationid);?>" class="alt1"><?php echo $navloc->getText("locationInfo"); ?></a><br>
+ &nbsp; &nbsp; <a href="../circ/loc_edit_form.php?locationid=<?php echo HURL($locationid);?>" class="alt1"><?php echo $navloc->getText("locationeditInfo"); ?></a><br>
+ &nbsp; &nbsp; &raquo; <?php echo $navloc->getText("locDelete"); ?><br>
+<?php } ?>
 
 
 <?php if ($nav == "newLocation") { ?>

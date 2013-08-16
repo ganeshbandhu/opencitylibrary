@@ -58,6 +58,8 @@ $trans["adminCollections"]         = "\$text = 'Collections';";
 $trans["adminThemes"]              = "\$text = 'Themes';";
 $trans["adminTranslation"]         = "\$text = 'Translation';";
 $trans["adminBulkUpload"]           = "\$text = 'Bulk Book Upload';";
+$trans["BooksForLocation"]     = "\$text = 'Books For Location';";
+$trans["MembersOfLocation"]     = "\$text = 'Members Of Location';";
 
 #****************************************************************************
 #*  Translation text for page cataloging.php

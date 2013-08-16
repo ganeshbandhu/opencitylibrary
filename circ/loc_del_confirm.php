@@ -6,7 +6,7 @@
   require_once("../shared/common.php");
   $tab = "circulation";
   $restrictToMbrAuth = TRUE;
-  $nav = "delete";
+  $nav = "locdelete";
   require_once("../shared/logincheck.php");
   require_once("../classes/Location.php");
   require_once("../classes/LocationQuery.php");
@@ -56,7 +56,7 @@
     } else {
   ?>
     
-?>
+
 <center>
 <form name="delLocationform" method="POST" action="../circ/loc_view.php?locationid=<?php echo HURL($locationid);?>&amp;reset=Y">
 <?php echo $loc->getText("locDelConfirmMsg",array("name"=>$locationName)); ?>
